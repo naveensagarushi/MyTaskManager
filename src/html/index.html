@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="app-header">
+            <div>
+                <p class="eyebrow">Organize your day</p>
+                <h1>Task Manager</h1>
+                <p class="subtitle">Add tasks, mark them complete, or remove them when you're done.</p>
+            </div>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </header>
+
+        <main>
+            <section class="task-panel" aria-labelledby="task-panel-heading">
+                <div class="panel-header">
+                    <h2 id="task-panel-heading">Create a task</h2>
+                    <p>Use the form below to add a new task to your list.</p>
+                </div>
+
+                <form id="task-form" class="task-form" aria-describedby="form-description">
+                    <p id="form-description" class="visually-hidden">Enter a task description and submit to add it to the list.</p>
+                    <label for="task-input">New task</label>
+                    <div class="input-group">
+                        <input type="text" id="task-input" name="task" placeholder="What do you want to do today?" aria-required="true" autocomplete="off">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="task-list-shell" aria-labelledby="list-heading">
+                <div class="panel-header">
+                    <h2 id="list-heading">Your tasks</h2>
+                    <p id="task-count" class="task-count">No tasks yet.</p>
+                </div>
+
+                <div class="filter-toolbar" role="toolbar" aria-label="Task filters">
+                    <button type="button" class="btn btn-filter active" data-filter="all">All</button>
+                    <button type="button" class="btn btn-filter" data-filter="completed">Completed</button>
+                    <button type="button" class="btn btn-filter" data-filter="pending">Pending</button>
+                </div>
+
+                <ul id="task-list" class="task-list" aria-live="polite" aria-relevant="additions removals"></ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html> 
